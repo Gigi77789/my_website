@@ -107,18 +107,12 @@
     }
 
     .portrait {
-      width: 160px;
-      height: 160px;
+      width: 200px;
+      height: 200px;
       border-radius: 12px;
-      object-fit: contain;
+      object-fit: cover;
       background: var(--bg-warm);
       border: 1px solid var(--border);
-      background: linear-gradient(135deg, var(--bg-warm) 0%, #d6d0c4 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink-muted);
-      font-size: 15px;
     }
 
     .sidebar h1 {
@@ -134,7 +128,7 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      color: var(--ink-muted);
+      color: var(--ink);
       text-decoration: none;
       font-size: 14px;
       font-weight: 500;
@@ -147,6 +141,7 @@
     .scholar-link svg {
       width: 14px;
       height: 14px;
+      color: #4285F4;
     }
 
     .sidebar .title {
@@ -156,7 +151,7 @@
     }
 
     .sidebar .email {
-      font-size: 15px;
+      font-size: 16px;
       margin-top: 2px;
     }
 
@@ -168,8 +163,8 @@
     .sidebar .email a:hover { color: var(--accent); }
 
     .sidebar .affiliation {
-      font-size: 15px;
-      color: var(--ink-muted);
+      font-size: 16px;
+      color: var(--ink-light);
       margin-top: 2px;
     }
 
@@ -300,24 +295,18 @@
 
     .pub-thumb {
       width: 260px;
-      height: 160px;
+      min-height: 200px;
       border-radius: 6px;
       background: var(--bg-warm);
       border: 1px solid var(--border);
-      object-fit: cover;
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      color: var(--ink-muted);
       overflow: hidden;
     }
 
     .pub-thumb img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      display: block;
     }
 
     .pub-info { min-width: 0; }
@@ -447,33 +436,13 @@
       .sidebar .email { margin-top: 1px; font-size: 12px; }
       .sidebar .affiliation { margin-top: 1px; font-size: 12px; }
 
-      .pub-card { grid-template-columns: 1fr; }
-      .pub-thumb { display: none; }
+      .pub-card { grid-template-columns: 1fr; gap: 10px; }
+      .pub-thumb { width: 100%; }
 
       nav .nav-inner { padding: 0 18px; height: 50px; }
-
-      /* Hide text links, show hamburger */
-      nav .nav-links { display: none; }
-      nav .nav-toggle { display: flex; }
-
-      nav.open .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        right: 0;
-        background: var(--bg);
-        border-bottom: 1px solid var(--border);
-        padding: 12px 18px 16px;
-        gap: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      }
-
-      nav.open .nav-links a {
-        font-size: 14px;
-        padding: 6px 0;
-      }
+      nav .nav-links { gap: 12px; }
+      nav .nav-links a { font-size: 13px; }
+      nav .nav-toggle { display: none; }
 
       .news-item { grid-template-columns: 1fr; gap: 2px; }
 
@@ -495,33 +464,17 @@
 
       .sidebar h1 { font-size: 18px; }
 
-      .research-tags { justify-content: center; }
-
       .page { padding: 20px 14px 40px; }
+
+      .pub-card { grid-template-columns: 1fr; gap: 8px; }
+      .pub-thumb { width: 100%; }
 
       .pub-title { font-size: 14.5px; }
       .pub-authors { font-size: 12px; }
 
       nav .nav-name { font-size: 15px; }
-    }
-
-    /* ─── NAV TOGGLE (hamburger) ─── */
-    .nav-toggle {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--ink-muted);
-      padding: 0;
-    }
-
-    .nav-toggle svg {
-      width: 22px;
-      height: 22px;
+      nav .nav-links { gap: 8px; }
+      nav .nav-links a { font-size: 11px; }
     }
 
     /* ─── ANIMATION ─── */
@@ -552,9 +505,6 @@
         <li><a href="#news">News</a></li>
         <li><a href="cv.pdf">CV</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
     </div>
   </nav>
 
@@ -572,11 +522,10 @@
         </a>
         <div class="title">Ph.D. Student</div>
         <div class="email">
-          <a href="/cdn-cgi/l/email-protection#8ef4e6efe1a0e3ebe0e9e2cee0e1fcfae6ebeffdfaebfce0a0ebeafb"><span class="__cf_email__" data-cfemail="fa80929b95d4979f949d96ba9495888e929f9b898e9f8894d49f9e8f">[email&#160;protected]</span></a>
+          <a href="mailto:zhao.mengl@northeastern.edu">zhao.mengl@northeastern.edu</a>
         </div>
         <div class="affiliation">
-          <a href="https://camd.northeastern.edu/">CAMD</a>,
-          <a href="https://www.northeastern.edu/">Northeastern University</a>
+          CAMD, Northeastern University
         </div>
       </div>
     </aside>
@@ -689,4 +638,5 @@
     &copy; 2026 Menglin Zhao &middot; Built with care
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/
+</body>
+</html>
