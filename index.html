@@ -33,7 +33,7 @@
       color: var(--ink);
       background: var(--bg);
       line-height: 1.65;
-      font-size: 15px;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -61,7 +61,7 @@
     nav .nav-name {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: 17px;
+      font-size: 19px;
       color: var(--ink);
       text-decoration: none;
       letter-spacing: -0.02em;
@@ -76,7 +76,7 @@
     nav .nav-links a {
       text-decoration: none;
       color: var(--ink-muted);
-      font-size: 13.5px;
+      font-size: 15.5px;
       font-weight: 500;
       letter-spacing: 0.03em;
       text-transform: uppercase;
@@ -118,12 +118,12 @@
       align-items: center;
       justify-content: center;
       color: var(--ink-muted);
-      font-size: 13px;
+      font-size: 15px;
     }
 
     .sidebar h1 {
       font-family: var(--serif);
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1.2;
@@ -136,7 +136,7 @@
       gap: 4px;
       color: var(--ink-muted);
       text-decoration: none;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 500;
       transition: color 0.2s;
       margin-top: 6px;
@@ -150,13 +150,13 @@
     }
 
     .sidebar .title {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--ink-light);
       margin-top: 6px;
     }
 
     .sidebar .email {
-      font-size: 13px;
+      font-size: 15px;
       margin-top: 2px;
     }
 
@@ -168,7 +168,7 @@
     .sidebar .email a:hover { color: var(--accent); }
 
     .sidebar .affiliation {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--ink-muted);
       margin-top: 2px;
     }
@@ -186,7 +186,7 @@
     .section { margin-bottom: 56px; }
 
     .section-label {
-      font-size: 11.5px;
+      font-size: 13.5px;
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -207,7 +207,7 @@
     /* ─── ABOUT ─── */
     .about p {
       font-family: var(--serif);
-      font-size: 16.5px;
+      font-size: 18.5px;
       line-height: 1.75;
       color: var(--ink);
       margin-bottom: 14px;
@@ -234,7 +234,7 @@
       padding: 4px 12px;
       background: var(--accent-light);
       color: var(--accent);
-      font-size: 14.5px;
+      font-size: 16.5px;
       font-weight: 500;
       border-radius: 20px;
       letter-spacing: 0.01em;
@@ -255,14 +255,14 @@
     .news-item:last-child { border-bottom: none; }
 
     .news-date {
-      font-size: 16.5px;
+      font-size: 18.5px;
       font-weight: 500;
       color: var(--ink-muted);
       font-variant-numeric: tabular-nums;
     }
 
     .news-text {
-      font-size: 16.5px;
+      font-size: 18.5px;
       color: var(--ink-light);
       line-height: 1.75;
     }
@@ -278,7 +278,7 @@
     /* ─── PUBLICATIONS ─── */
     .pub-year-heading {
       font-family: var(--serif);
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
       color: var(--ink);
       margin-top: 32px;
@@ -289,6 +289,9 @@
     .pub-year-heading:first-child { margin-top: 0; }
 
     .pub-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 20px;
       padding: 18px 0;
       border-bottom: 1px solid var(--border);
     }
@@ -296,8 +299,8 @@
     .pub-card:last-child { border-bottom: none; }
 
     .pub-thumb {
-      width: 100px;
-      height: 72px;
+      width: 200px;
+      height: 140px;
       border-radius: 6px;
       background: var(--bg-warm);
       border: 1px solid var(--border);
@@ -306,15 +309,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 13px;
       color: var(--ink-muted);
+      overflow: hidden;
+    }
+
+    .pub-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .pub-info { min-width: 0; }
 
     .pub-title {
       font-family: var(--serif);
-      font-size: 17.5px;
+      font-size: 19.5px;
       font-weight: 600;
       line-height: 1.4;
       color: var(--ink);
@@ -329,7 +339,7 @@
     .pub-title a:hover { color: var(--accent); }
 
     .pub-authors {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--ink-muted);
       margin-bottom: 4px;
       line-height: 1.45;
@@ -338,10 +348,14 @@
     .pub-authors strong { color: var(--ink); font-weight: 600; }
 
     .pub-venue-full {
-      font-size: 12.5px;
+      font-size: 14.5px;
       color: var(--ink-muted);
       font-style: italic;
       margin-bottom: 6px;
+    }
+
+    .pub-venue-full strong {
+      color: var(--ink);
     }
 
     .pub-links {
@@ -351,7 +365,7 @@
     }
 
     .pub-links a {
-      font-size: 11.5px;
+      font-size: 13.5px;
       font-weight: 500;
       color: var(--accent);
       text-decoration: none;
@@ -371,7 +385,7 @@
       border-top: 1px solid var(--border);
       padding: 24px 32px;
       text-align: center;
-      font-size: 12.5px;
+      font-size: 14.5px;
       color: var(--ink-muted);
     }
 
@@ -532,7 +546,7 @@
   <!-- ─── NAVIGATION ─── -->
   <nav>
     <div class="nav-inner">
-      <a href="#" class="nav-name">Menglin Zhao</a>
+      <a href="#" class="nav-name"></a>
       <ul class="nav-links">
         <li><a href="#publications">Publications</a></li>
         <li><a href="#news">News</a></li>
@@ -591,6 +605,9 @@
 
         <!-- Publication 1 -->
         <div class="pub-card">
+          <div class="pub-thumb">
+            <!-- Replace with: <img src="paper1.jpg" alt="Paper thumbnail"> -->
+          </div>
           <div class="pub-info">
             <div class="pub-title">
               <a href="https://arxiv.org/abs/2509.23509">Exploring Collaboration Breakdowns Between Provider Teams and Patients in Post-Surgery Care</a>
@@ -599,7 +616,7 @@
               Bingsheng Yao<sup>*</sup>, <strong>Menglin Zhao</strong><sup>*</sup>, Zhan Zhang, Pengqi Wang, Emma G. Chester, Changchang Yin, Tianshi Li, Varun Mishra, Lace Padilla, Odysseas Chatzipanagiotou, Timothy Pawlik, Ping Zhang, Weidan Cao, and Dakuo Wang
             </div>
             <div class="pub-venue-full">
-              CHI '26: Proceedings of the 2026 CHI Conference on Human Factors in Computing System
+              <strong>CHI '26</strong>: Proceedings of the 2026 CHI Conference on Human Factors in Computing System
             </div>
             <div class="pub-links">
               <a href="https://arxiv.org/abs/2509.23509">PDF</a>
@@ -609,6 +626,30 @@
 
         <!-- Publication 2 -->
         <div class="pub-card">
+          <div class="pub-thumb">
+            <!-- Replace with: <img src="paper2.jpg" alt="Paper thumbnail"> -->
+          </div>
+          <div class="pub-info">
+            <div class="pub-title">
+              <a href="https://arxiv.org/abs/2506.00241">Balancing Efficiency and Empathy: Healthcare Providers' Perspectives on AI-Supported Workflows for Serious Illness Conversations in the Emergency Department</a>
+            </div>
+            <div class="pub-authors">
+              <strong>Menglin Zhao</strong>, Zhuorui Yong, Ruijia Guan, Kai-Wei Chang, Adrian Haimovich, Kei Ouchi, Timothy Bickmore, Bingsheng Yao, Dakuo Wang, and Smit Desai
+            </div>
+            <div class="pub-venue-full">
+              <strong>CHI '26</strong>: Proceedings of the 2026 CHI Conference on Human Factors in Computing System
+            </div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2506.00241">PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Publication 3 -->
+        <div class="pub-card">
+          <div class="pub-thumb">
+            <!-- Replace with: <img src="paper3.jpg" alt="Paper thumbnail"> -->
+          </div>
           <div class="pub-info">
             <div class="pub-title">
               <a href="https://arxiv.org/abs/2502.03732">More Modality, More AI: Exploring Design Opportunities of AI-Based Multi-modal Remote Monitoring Technologies for Early Detection of Mental Health Sequelae in Youth Concussion Patients</a>
@@ -621,24 +662,6 @@
             </div>
             <div class="pub-links">
               <a href="https://arxiv.org/abs/2502.03732">PDF</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Publication 3 -->
-        <div class="pub-card">
-          <div class="pub-info">
-            <div class="pub-title">
-              <a href="https://arxiv.org/abs/2506.00241">Designing AI Tools for Clinical Care Teams to Support Serious Illness Conversations with Older Adults in the Emergency Department</a>
-            </div>
-            <div class="pub-authors">
-              <strong>Menglin Zhao</strong>, Zhuorui Yong, Ruijia Guan, Kai-Wei Chang, Adrian Haimovich, Kei Ouchi, Timothy Bickmore, Bingsheng Yao, Dakuo Wang, and Smit Desai
-            </div>
-            <div class="pub-venue-full">
-              CHI '26: Proceedings of the 2026 CHI Conference on Human Factors in Computing System
-            </div>
-            <div class="pub-links">
-              <a href="https://arxiv.org/abs/2506.00241">PDF</a>
             </div>
           </div>
         </div>
