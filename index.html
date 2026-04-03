@@ -234,7 +234,7 @@
       padding: 4px 12px;
       background: var(--accent-light);
       color: var(--accent);
-      font-size: 12.5px;
+      font-size: 14.5px;
       font-weight: 500;
       border-radius: 20px;
       letter-spacing: 0.01em;
@@ -289,12 +289,8 @@
     .pub-year-heading:first-child { margin-top: 0; }
 
     .pub-card {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 20px;
       padding: 18px 0;
       border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
     }
 
     .pub-card:last-child { border-bottom: none; }
@@ -318,7 +314,7 @@
 
     .pub-title {
       font-family: var(--serif);
-      font-size: 16.5px;
+      font-size: 17.5px;
       font-weight: 600;
       line-height: 1.4;
       color: var(--ink);
@@ -538,7 +534,6 @@
     <div class="nav-inner">
       <a href="#" class="nav-name">Menglin Zhao</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="cv.pdf">CV</a></li>
@@ -577,26 +572,16 @@
 
       <!-- ABOUT -->
       <section class="section fade-in" id="about">
-        <div class="section-label">About</div>
         <div class="about">
           <p>
             I am currently a first-year Ph.D. student at
             <a href="https://www.northeastern.edu/">Northeastern University</a>, advised by
-            <a href="https://hailab.io/">Prof. Dakuo Wang</a> in the
+            <a href="https://scholar.google.com/citations?user=Uno8dugAAAAJ&hl=en">Prof. Dakuo Wang</a> in the
             <a href="https://hailab.io/">Human-Centered AI Lab (NEU HAI)</a>.
             My research lies at the intersection of
             <strong>Human-Computer Interaction (HCI)</strong>.
+            My work spans co-designing AI-driven clinical decision support systems for remote care, and exploring how technologies, such as AI, can improve patient-provider communication amid the time-pressured emergency department and strengthen multi-stakeholders (physicians, nurses, patients, and caregivers) collaboration in the post-surgery care.
           </p>
-          <p>
-            I use human-centered methods to explore the opportunities of AI, such as LLM-powered conversational agents, and design AI-powered systems for supporting communication and collaboration between different healthcare stakeholders, including clinicians, patients, and caregivers, across clinical workflows such as post-surgery care coordination, remote patient monitoring, and serious illness conversations.
-          </p>
-
-          <div class="research-tags">
-            <span>Human-Computer Interaction</span>
-            <span>Human-Centered AI</span>
-            <span>Healthcare</span>
-            <span>Clinical Decision Support</span>
-          </div>
         </div>
       </section>
 
@@ -608,26 +593,24 @@
 
         <!-- Publication 1 -->
         <div class="pub-card">
-          <div class="pub-thumb">Fig. 1</div>
           <div class="pub-info">
             <div class="pub-title">
-              <a href="#">Exploring Collaboration Breakdowns Between Provider Teams and Patients in Post-Surgery Care</a>
+              <a href="https://arxiv.org/abs/2509.23509">Exploring Collaboration Breakdowns Between Provider Teams and Patients in Post-Surgery Care</a>
             </div>
             <div class="pub-authors">
-              <strong>Menglin Zhao</strong>, Zhan Zhang, and Dakuo Wang
+              Bingsheng Yao, <strong>Menglin Zhao</strong>, Zhan Zhang, Pengqi Wang, Emma G. Chester, Changchang Yin, Tianshi Li, Varun Mishra, Lace Padilla, Odysseas Chatzipanagiotou, Timothy Pawlik, Ping Zhang, Weidan Cao, and Dakuo Wang
             </div>
             <div class="pub-venue-full">
               Proceedings of the ACM Conference on Human Factors in Computing Systems (CHI 2025)
             </div>
             <div class="pub-links">
-              <a href="#">PDF</a>
+              <a href="https://arxiv.org/abs/2509.23509">PDF</a>
             </div>
           </div>
         </div>
 
         <!-- Publication 2 -->
         <div class="pub-card">
-          <div class="pub-thumb">Fig. 2</div>
           <div class="pub-info">
             <div class="pub-title">
               <a href="https://arxiv.org/abs/2502.03732">More Modality, More AI: Exploring Design Opportunities of AI-Based Multi-modal Remote Monitoring Technologies for Early Detection of Mental Health Sequelae in Youth Concussion Patients</a>
@@ -646,7 +629,6 @@
 
         <!-- Publication 3 -->
         <div class="pub-card">
-          <div class="pub-thumb">Fig. 3</div>
           <div class="pub-info">
             <div class="pub-title">
               <a href="https://arxiv.org/abs/2506.00241">Designing AI Tools for Clinical Care Teams to Support Serious Illness Conversations with Older Adults in the Emergency Department</a>
@@ -686,13 +668,6 @@
     &copy; 2026 Menglin Zhao &middot; Built with care
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('nav');
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => nav.classList.remove('open'));
-    });
-  </script>
-</body>
-</html>
+    const nav = document.querySelect
