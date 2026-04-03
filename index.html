@@ -301,12 +301,16 @@
       border: 1px solid var(--border);
       flex-shrink: 0;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .pub-thumb img {
-      width: 100%;
-      height: auto;
       display: block;
+      margin: auto;
+      max-width: 100%;
+      height: auto;
     }
 
     .pub-info { min-width: 0; }
@@ -442,7 +446,6 @@
       nav .nav-inner { padding: 0 18px; height: 50px; }
       nav .nav-links { gap: 12px; }
       nav .nav-links a { font-size: 13px; }
-      nav .nav-toggle { display: none; }
 
       .news-item { grid-template-columns: 1fr; gap: 2px; }
 
