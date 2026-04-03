@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menglin Zhao | HCI Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-light: #4a4a4a;
+      --ink-muted: #7a7a7a;
+      --bg: #faf9f7;
+      --bg-warm: #f3f0eb;
+      --accent: #2d5a27;
+      --accent-light: #e8f0e6;
+      --accent-hover: #1e3d1a;
+      --border: #e0ddd7;
+      --serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --max-w: 1120px;
+      --sidebar-w: 220px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 249, 247, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    nav .nav-name {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      text-decoration: none;
+      color: var(--ink-muted);
+      font-size: 13.5px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav .nav-links a:hover { color: var(--accent); }
+
+    /* ─── LAYOUT ─── */
+    .page {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* ─── SIDEBAR ─── */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .portrait {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--bg-warm) 0%, #d6d0c4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink-muted);
+      font-size: 13px;
+    }
+
+    .sidebar h1 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-top: 16px;
+    }
+
+    .scholar-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--ink-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      transition: color 0.2s;
+      margin-top: 6px;
+    }
+
+    .scholar-link:hover { color: var(--accent); }
+
+    .scholar-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .sidebar .title {
+      font-size: 14px;
+      color: var(--ink-light);
+      margin-top: 6px;
+    }
+
+    .sidebar .email {
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    .sidebar .email a {
+      color: var(--ink-light);
+      text-decoration: none;
+    }
+
+    .sidebar .email a:hover { color: var(--accent); }
+
+    .sidebar .affiliation {
+      font-size: 13px;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    .sidebar .affiliation a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .sidebar .affiliation a:hover { text-decoration: underline; }
+
+    /* ─── MAIN ─── */
+    .main { min-width: 0; }
+
+    .section { margin-bottom: 56px; }
+
+    .section-label {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── ABOUT ─── */
+    .about p {
+      font-family: var(--serif);
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .about a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(45, 90, 39, 0.3);
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .about a:hover { text-decoration-color: var(--accent); }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+
+    .research-tags span {
+      padding: 4px 12px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12.5px;
+      font-weight: 500;
+      border-radius: 20px;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── NEWS ─── */
+    .news-list { list-style: none; }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+
+    .news-item:last-child { border-bottom: none; }
+
+    .news-date {
+      font-size: 16.5px;
+      font-weight: 500;
+      color: var(--ink-muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .news-text {
+      font-size: 16.5px;
+      color: var(--ink-light);
+      line-height: 1.75;
+    }
+
+    .news-text a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .news-text a:hover { text-decoration: underline; }
+
+    /* ─── PUBLICATIONS ─── */
+    .pub-year-heading {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 32px;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .pub-year-heading:first-child { margin-top: 0; }
+
+    .pub-card {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .pub-card:last-child { border-bottom: none; }
+
+    .pub-thumb {
+      width: 100px;
+      height: 72px;
+      border-radius: 6px;
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      object-fit: cover;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--ink-muted);
+    }
+
+    .pub-info { min-width: 0; }
+
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 16.5px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .pub-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .pub-title a:hover { color: var(--accent); }
+
+    .pub-authors {
+      font-size: 13px;
+      color: var(--ink-muted);
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+
+    .pub-authors strong { color: var(--ink); font-weight: 600; }
+
+    .pub-venue-full {
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pub-links a {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 2px 8px;
+      background: var(--accent-light);
+      border-radius: 4px;
+      transition: all 0.15s;
+    }
+
+    .pub-links a:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 32px;
+      text-align: center;
+      font-size: 12.5px;
+      color: var(--ink-muted);
+    }
+
+    footer a { color: var(--ink-muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* ─── RESPONSIVE ─── */
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      :root { --sidebar-w: 180px; }
+
+      .page { gap: 40px; padding: 40px 24px 60px; }
+
+      .portrait { width: 140px; height: 140px; }
+
+      .sidebar h1 { font-size: 20px; }
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+      .page {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 28px 18px 48px;
+      }
+
+      /* Sidebar: photo left, all info right */
+      .sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: auto auto;
+        gap: 0 20px;
+        text-align: left;
+        align-items: start;
+      }
+
+      .portrait {
+        width: 100px;
+        height: 100px;
+        grid-row: 1 / 3;
+        flex-shrink: 0;
+      }
+
+      .sidebar h1 {
+        margin-top: 4px;
+        font-size: 20px;
+        align-self: end;
+      }
+
+      .sidebar-details {
+        align-self: start;
+      }
+
+      /* Tighter line spacing on mobile */
+      .scholar-link { margin-top: 2px; }
+      .sidebar .title { margin-top: 2px; font-size: 13px; }
+      .sidebar .email { margin-top: 1px; font-size: 12px; }
+      .sidebar .affiliation { margin-top: 1px; font-size: 12px; }
+
+      .pub-card { grid-template-columns: 1fr; }
+      .pub-thumb { display: none; }
+
+      nav .nav-inner { padding: 0 18px; height: 50px; }
+
+      /* Hide text links, show hamburger */
+      nav .nav-links { display: none; }
+      nav .nav-toggle { display: flex; }
+
+      nav.open .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 12px 18px 16px;
+        gap: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      }
+
+      nav.open .nav-links a {
+        font-size: 14px;
+        padding: 6px 0;
+      }
+
+      .news-item { grid-template-columns: 1fr; gap: 2px; }
+
+      .about p { font-size: 15px; }
+
+      .section-label { font-size: 11px; }
+
+      footer { padding: 20px 18px; }
+    }
+
+    /* Small phone */
+    @media (max-width: 420px) {
+      .sidebar {
+        grid-template-columns: 80px 1fr;
+        gap: 0 14px;
+      }
+
+      .portrait { width: 80px; height: 80px; }
+
+      .sidebar h1 { font-size: 18px; }
+
+      .research-tags { justify-content: center; }
+
+      .page { padding: 20px 14px 40px; }
+
+      .pub-title { font-size: 14.5px; }
+      .pub-authors { font-size: 12px; }
+
+      nav .nav-name { font-size: 15px; }
+    }
+
+    /* ─── NAV TOGGLE (hamburger) ─── */
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--ink-muted);
+      padding: 0;
+    }
+
+    .nav-toggle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* ─── ANIMATION ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.05s; }
+    .fade-in:nth-child(2) { animation-delay: 0.1s; }
+    .fade-in:nth-child(3) { animation-delay: 0.15s; }
+    .fade-in:nth-child(4) { animation-delay: 0.2s; }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-name">Menglin Zhao</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── PAGE ─── -->
+  <div class="page">
+
+    <!-- ─── SIDEBAR ─── -->
+    <aside class="sidebar fade-in">
+      <img src="photo.jpg" class="portrait" alt="Menglin Zhao">
+      <h1>Menglin Zhao</h1>
+      <div class="sidebar-details">
+        <a href="https://scholar.google.com/citations?user=MHZ2dK4AAAAJ&hl=en" class="scholar-link" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.978 0-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+          Google Scholar
+        </a>
+        <div class="title">Ph.D. Student</div>
+        <div class="email">
+          <a href="mailto:zhao.mengl@northeastern.edu">zhao.mengl@northeastern.edu</a>
+        </div>
+        <div class="affiliation">
+          <a href="https://camd.northeastern.edu/">CAMD</a>,
+          <a href="https://www.northeastern.edu/">Northeastern University</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ─── MAIN CONTENT ─── -->
+    <main class="main">
+
+      <!-- ABOUT -->
+      <section class="section fade-in" id="about">
+        <div class="section-label">About</div>
+        <div class="about">
+          <p>
+            I am currently a first-year Ph.D. student at
+            <a href="https://www.northeastern.edu/">Northeastern University</a>, advised by
+            <a href="https://hailab.io/">Prof. Dakuo Wang</a> in the
+            <a href="https://hailab.io/">Human-Centered AI Lab (NEU HAI)</a>.
+            My research lies at the intersection of
+            <strong>Human-Computer Interaction (HCI)</strong>.
+          </p>
+          <p>
+            I use human-centered methods to explore the opportunities of AI, such as LLM-powered conversational agents, and design AI-powered systems for supporting communication and collaboration between different healthcare stakeholders, including clinicians, patients, and caregivers, across clinical workflows such as post-surgery care coordination, remote patient monitoring, and serious illness conversations.
+          </p>
+
+          <div class="research-tags">
+            <span>Human-Computer Interaction</span>
+            <span>Human-Centered AI</span>
+            <span>Healthcare</span>
+            <span>Clinical Decision Support</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section class="section fade-in" id="publications">
+        <div class="section-label">Publications</div>
+
+        <h3 class="pub-year-heading">2025</h3>
+
+        <!-- Publication 1 -->
+        <div class="pub-card">
+          <div class="pub-thumb">Fig. 1</div>
+          <div class="pub-info">
+            <div class="pub-title">
+              <a href="#">Exploring Collaboration Breakdowns Between Provider Teams and Patients in Post-Surgery Care</a>
+            </div>
+            <div class="pub-authors">
+              <strong>Menglin Zhao</strong>, Zhan Zhang, and Dakuo Wang
+            </div>
+            <div class="pub-venue-full">
+              Proceedings of the ACM Conference on Human Factors in Computing Systems (CHI 2025)
+            </div>
+            <div class="pub-links">
+              <a href="#">PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="pub-card">
+          <div class="pub-thumb">Fig. 2</div>
+          <div class="pub-info">
+            <div class="pub-title">
+              <a href="https://arxiv.org/abs/2502.03732">More Modality, More AI: Exploring Design Opportunities of AI-Based Multi-modal Remote Monitoring Technologies for Early Detection of Mental Health Sequelae in Youth Concussion Patients</a>
+            </div>
+            <div class="pub-authors">
+              Bingsheng Yao, <strong>Menglin Zhao</strong>, Yuling Sun, Weidan Cao, Changchang Yin, Stephen Intille, Xuhai Xu, Ping Zhang, Jingzhen Yang, and Dakuo Wang
+            </div>
+            <div class="pub-venue-full">
+              arXiv preprint arXiv:2502.03732
+            </div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2502.03732">PDF</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Publication 3 -->
+        <div class="pub-card">
+          <div class="pub-thumb">Fig. 3</div>
+          <div class="pub-info">
+            <div class="pub-title">
+              <a href="https://arxiv.org/abs/2506.00241">Designing AI Tools for Clinical Care Teams to Support Serious Illness Conversations with Older Adults in the Emergency Department</a>
+            </div>
+            <div class="pub-authors">
+              <strong>Menglin Zhao</strong>, Zhuorui Yong, Ruijia Guan, Kai-Wei Chang, Adrian Haimovich, Kei Ouchi, Timothy Bickmore, Bingsheng Yao, Dakuo Wang, and Smit Desai
+            </div>
+            <div class="pub-venue-full">
+              arXiv preprint arXiv:2506.00241
+            </div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2506.00241">PDF</a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- NEWS -->
+      <section class="section fade-in" id="news">
+        <div class="section-label">News</div>
+        <ul class="news-list">
+          <li class="news-item">
+            <span class="news-date">Jan 2026</span>
+            <span class="news-text">
+              &#x1F4C3; Two papers accepted to <a href="https://chi2026.acm.org/">CHI 2026</a>!
+            </span>
+          </li>
+        </ul>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    &copy; 2026 Menglin Zhao &middot; Built with care
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
